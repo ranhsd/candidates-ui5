@@ -1,0 +1,69 @@
+<mvc:View controllerName="com.appmyapp.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:f="sap.f">
+	<App>
+		<pages>
+			<page showHeader="false">
+				<content>
+					<f:ShellBar showMenuButton="true" showNavButton="false" title="{i18n>shellBarTitle}" secondTitle="{i18n>shellBarSecondTitle}">
+						<f:profile>
+							<f:Avatar initials="UI"/>
+						</f:profile>
+					</f:ShellBar>
+					<OverflowToolbar design="Solid" style="Standard" class="lightblue-toolbar">
+						<content>
+							<Title class="font-weight-bold" text="רשימת מיועדים"></Title>
+						</content>
+					</OverflowToolbar>
+					<Table id="employeesTable" items="{/EmployeeSet}" growing="{mainView>/paging/enabled}" growingThreshold="{mainView>/paging/itemsPerPage}"
+						growingScrollToLoad="{mainView>/paging/scrollToLoad}" updateStarted="tableUpdateStarted">
+						<headerToolbar>
+							<OverflowToolbar height="100px">
+								<content>
+									<HBox alignItems="End" displayInline="true">
+										<VBox>
+											<Label text="תעודת זהות"></Label>
+											<Input width="150px"></Input>
+										</VBox>
+										<VBox class="mr-m">
+											<Label text="שם פרטי"></Label>
+											<Input width="150px" placeholder="שם פרטי"></Input>
+										</VBox>
+									</HBox>
+									<ToolbarSpacer/>
+									<SearchField search="onSearch" showSearchButton="false" value="{mainView>/searchText}" width="200px" placeholder="{i18n>MAIN_CANDIDATES_SEARCH_CANDIDATE_BY_NAME}"></SearchField>
+									<Button press="searchCandidates" width="100px" type="Emphasized" text="חיפוש"></Button>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="{i18n>MAIN_CADIDATES_TABLE_ID_COLUMN}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>MAIN_CANDIDATES_COLUMN_NAME}"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="{i18n>MAIN_CANDIDATES_COLUMN_EMAIL}"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="{i18n>MAIN_CANDIDATES_COLUMN_PHONE}"/>
+							</Column>
+							<Column></Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier title="{id}"></ObjectIdentifier>
+									<Text text="{name}"></Text>
+									<Text text="{email}"></Text>
+									<Text text="{phone}"></Text>
+									<Button press="openCandidateMenu" type="Transparent" icon="sap-icon://overflow"></Button>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,25 @@
+/* Enter your custom styles here */
+
+.ml-s {
+	margin-left: 5px;
+}
+
+.ml-m {
+	margin-left: 10px;
+}
+
+.mr-s {
+	margin-right: 5px;
+}
+
+.mr-m {
+	margin-right: 10px;	
+}
+
+.lightblue-toolbar { 
+	background-color: #dae4f9 !important;
+}
+
+.font-weight-bold {
+	font-weight: bold;
+}
