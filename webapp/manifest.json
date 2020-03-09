@@ -46,7 +46,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "com.appmyapp.view.Main",
+			"viewName": "com.appmyapp.view.Languages",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -91,6 +91,9 @@
 			"css": [
 				{
 					"uri": "css/style.css"
+				},
+				{
+					"uri": "css/languages.css"
 				}
 			]
 		}

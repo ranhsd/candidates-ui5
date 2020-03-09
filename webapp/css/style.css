@@ -1,5 +1,4 @@
 /* Enter your custom styles here */
-
 .ml-s {
 	margin-left: 5px;
 }
@@ -16,10 +15,31 @@
 	margin-right: 10px;	
 }
 
+
+.pa-s {
+	padding: 5px;
+}
+
+.pa-m {
+	padding: 10px;
+}
+
+.pa-l {
+	padding: 15px;
+}
+
+.pa-xl {
+	padding: 20px;
+}
+
 .lightblue-toolbar { 
 	background-color: #dae4f9 !important;
 }
 
 .font-weight-bold {
 	font-weight: bold;
+}
+
+.margin-mx {
+	margin: 0 auto;
 }
