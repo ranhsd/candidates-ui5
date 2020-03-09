@@ -2,7 +2,7 @@
 	displayBlock="true" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:f="sap.f">
 	<App>
 		<pages>
-			<page showHeader="false">
+			<Page showHeader="false">
 				<content>
 					<f:ShellBar showMenuButton="true" showNavButton="false" title="{i18n>shellBarTitle}" secondTitle="{i18n>shellBarSecondTitle}">
 						<f:profile>
@@ -63,7 +63,7 @@
 						</items>
 					</Table>
 				</content>
-			</page>
+			</Page>
 		</pages>
 	</App>
 </mvc:View>
