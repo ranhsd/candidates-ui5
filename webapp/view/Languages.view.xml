@@ -1,0 +1,64 @@
+<mvc:View controllerName="com.appmyapp.controller.Languages" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:f="sap.f" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page title="Title" showHeader="false">
+				<content>
+					<f:ShellBar showMenuButton="true" showNavButton="false" title="{i18n>shellBarTitle}" secondTitle="{i18n>shellBarSecondTitle}">
+						<f:profile>
+							<f:Avatar initials="UI"/>
+						</f:profile>
+					</f:ShellBar>
+					<VBox width="80%" class="margin-mx container-distance">
+						<Title level="H3" text="שפות" titleStyle="H3"/>
+						
+						<Table items="{userLanguages>/userLanguages}" noDataText="{i18n>NO_LANGUAGES_ADDED_TEXT}" showSeparators="None" class="container-distance" backgroundDesign="Transparent">
+							<headerToolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer></ToolbarSpacer>
+									<Button press="addLanguage" type="Emphasized" icon="sap-icon://add" text="הוספת שפה"></Button>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+								<Column vAlign="Center">
+									<Label design="Bold" text="שפה"></Label>
+								</Column>
+								<Column vAlign="Center">
+									<Label design="Bold" text="קריאה"></Label>
+								</Column>
+								<Column vAlign="Center">
+									<Label design="Bold" text="כתיבה"></Label>
+								</Column>
+								<Column vAlign="Center">
+									<Label design="Bold" text="דיבור"></Label>
+								</Column>
+								<Column vAlign="Center" width="3rem"></Column>
+								<Column vAlign="Center" width="3rem"></Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<ComboBox selectedKey="{userLanguages>language}" items="{languages>/options}">
+											<core:Item key="{languages>language}" text="{languages>language}"/>
+										</ComboBox>
+										<ComboBox selectedKey="{userLanguages>read}" items="{languages>/levels}">
+											<core:Item key="{languages>level}" text="{languages>level}"/>
+										</ComboBox>
+										<ComboBox selectedKey="{userLanguages>write}" items="{languages>/levels}">
+											<core:Item key="{languages>level}" text="{languages>level}"/>
+										</ComboBox>
+										<ComboBox  selectedKey="{userLanguages>verbal}" items="{languages>/levels}">
+											<core:Item key="{languages>level}" text="{languages>level}"/>
+										</ComboBox>
+										<Button icon="sap-icon://attachment" type="Emphasized"></Button>
+										<Button icon="sap-icon://delete" press="deleteLanguage"></Button>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -12,13 +12,7 @@ sap.ui.define([
 		oContextMenu: null,
 
 		onInit: function() {
-
 			this._setupViewModel();
-
-			// var mainModel = new JSONModel();
-
-			// mainModel.loadData("model/users.json");
-			// this.getView().setModel(mainModel);
 		},
 
 		openCandidateMenu: function(oEvent) {
