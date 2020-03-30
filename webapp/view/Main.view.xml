@@ -14,7 +14,7 @@
 							<Title class="font-weight-bold" text="רשימת מיועדים"></Title>
 						</content>
 					</OverflowToolbar>
-					<Table id="employeesTable" items="{/EmployeeSet}" growing="{mainView>/paging/enabled}" growingThreshold="{mainView>/paging/itemsPerPage}"
+					<Table showSeparators="None" id="employeesTable" items="{/users}" growing="{mainView>/paging/enabled}" growingThreshold="{mainView>/paging/itemsPerPage}"
 						growingScrollToLoad="{mainView>/paging/scrollToLoad}" updateStarted="tableUpdateStarted">
 						<headerToolbar>
 							<OverflowToolbar height="100px">
@@ -28,35 +28,75 @@
 											<Label text="שם פרטי"></Label>
 											<Input width="150px" placeholder="שם פרטי"></Input>
 										</VBox>
+										<VBox class="mr-m">
+											<Label text="שם משפחה"></Label>
+											<Input width="150px" placeholder="שם משפחה"></Input>
+										</VBox>
 									</HBox>
 									<ToolbarSpacer/>
-									<SearchField search="onSearch" showSearchButton="false" value="{mainView>/searchText}" width="200px" placeholder="{i18n>MAIN_CANDIDATES_SEARCH_CANDIDATE_BY_NAME}"></SearchField>
-									<Button press="searchCandidates" width="100px" type="Emphasized" text="חיפוש"></Button>
+									<!--<SearchField search="onSearch" showSearchButton="false" value="{mainView>/searchText}" width="200px" placeholder="{i18n>MAIN_CANDIDATES_SEARCH_CANDIDATE_BY_NAME}"></SearchField>-->
+									<!--<Button press="searchCandidates" width="100px" type="Emphasized" text="חיפוש"></Button>-->
 								</content>
 							</OverflowToolbar>
 						</headerToolbar>
 						<columns>
-							<Column>
-								<Text text="{i18n>MAIN_CADIDATES_TABLE_ID_COLUMN}"/>
+							<Column hAlign="Right" width="100px">
+								<Text text="{i18n>MAIN_CADIDATES_TABLE_ID_COLUMN}" width="auto"/>
 							</Column>
-							<Column>
-								<Text text="{i18n>MAIN_CANDIDATES_COLUMN_NAME}"/>
+							<Column hAlign="Right">
+								<Text text="שם פרטי"/>
 							</Column>
-							<Column hAlign="Center">
-								<Text text="{i18n>MAIN_CANDIDATES_COLUMN_EMAIL}"/>
+							<Column hAlign="Right">
+								<Text text="שם משפחה"/>
 							</Column>
-							<Column hAlign="Center">
-								<Text text="{i18n>MAIN_CANDIDATES_COLUMN_PHONE}"/>
+							<Column hAlign="Right" width="100px">
+								<Text text="תאריך תחילת עבודה משוער"/>
 							</Column>
+							<Column hAlign="Right">
+								<Text text="מספר משרה"/>
+							</Column>	
+							<Column hAlign="Right">
+								<Text text="סטטוס ראשי"/>
+							</Column>	
+							<Column hAlign="Right">
+								<Text text="סטטוס משני"/>
+							</Column>
+							<Column hAlign="Right">
+								<Text text="איזור"/>
+							</Column>	
+							<Column hAlign="Right">
+								<Text text="תת איזור"/>
+							</Column>	
+							<Column hAlign="Right">
+								<Text text="יחידה אירגונית"/>
+							</Column>	
+							<Column hAlign="Right">
+								<Text text="דירוג"/>
+							</Column>		
+							<Column hAlign="Right">
+								<Text text="מתח דרגות"/>
+							</Column>	
+							<Column hAlign="Right">
+								<Text text="מסלול קליטה"/>
+							</Column>							
 							<Column></Column>
 						</columns>
 						<items>
 							<ColumnListItem>
 								<cells>
 									<ObjectIdentifier title="{id}"></ObjectIdentifier>
-									<Text text="{name}"></Text>
-									<Text text="{email}"></Text>
-									<Text text="{phone}"></Text>
+									<Text text="{firstName}"></Text>
+									<Text text="{lastName}"></Text>
+									<Text text="{startDate}"></Text>
+									<Text text="{positionNum}"></Text>
+									<Text text="{primaryStatus}"></Text>
+									<Text text="{secStatus}"></Text>
+									<Text text="{area}"></Text>
+									<Text text="{subArea}"></Text>
+									<Text text="{orgUnit}"></Text>
+									<Text text="{rating}"></Text>
+									<Text text="{rangeRank}"></Text>
+									<Text text="{receptionTrack}"></Text>
 									<Button press="openCandidateMenu" type="Transparent" icon="sap-icon://overflow"></Button>
 								</cells>
 							</ColumnListItem>

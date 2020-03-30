@@ -39,14 +39,11 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "com.appmyapp.view.Languages",
+			"viewName": "com.appmyapp.view.Main",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -75,27 +72,23 @@
 					"bundleName": "com.appmyapp.i18n.i18n"
 				}
 			},
-			"": {
+			"odata": {
 				"type": "sap.ui.model.odata.v2.ODataModel",
 				"settings": {
 					"defaultOperationMode": "Server",
 					"defaultBindingMode": "OneTime",
-					"defaultCountMode": "Request",
-					"useBatch": false
+					"defaultCountMode": "Request"
 				},
 				"dataSource": "ZNESS_DEMO_SRV",
 				"preload": true
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				},
-				{
-					"uri": "css/languages.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}, {
+				"uri": "css/languages.css"
+			}]
 		}
 	}
 }
